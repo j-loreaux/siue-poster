@@ -257,12 +257,14 @@
 
 %%% Redefine maketitle
 \renewcommand*{\maketitle}{
-  \begin{titlepage}
-    {\Huge\bfseries\addfontfeatures{Color=\titlecolor}\@title}\par
-    \vfill
-    {\Huge\addfontfeatures{Color=\authorcolor}\@author\par}
-    \vfill
-  \end{titlepage}
+  \begin{staticcontents*}{title}
+    \begin{titlepage}
+      {\Huge\bfseries\addfontfeatures{Color=\titlecolor}\@title}\par
+      \vfill
+      {\Huge\addfontfeatures{Color=\authorcolor}\@author\par}
+      \vfill
+    \end{titlepage}
+  \end{staticcontents*}
 }
   % \begin{titlepage}
   %   \parbox{48cm}{\Huge\bfseries\addfontfeatures{Color=\titlecolor}\@title}\par
