@@ -1,0 +1,280 @@
+\ProvidesPackage{siue-poster-settings}
+
+\RequirePackage{parskip}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{everysel}
+\RequirePackage{fontspec}
+\RequirePackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+\newcommand{\thmstylebox}[2]{
+  \newtcolorbox[auto counter]{#1}[1][]{%
+    before skip=1em,
+    after skip=1em,
+    colback = \thmbackcolor,
+    colbacktitle = \thmtitlebackcolor,
+    fontupper = \addfontfeatures{Color=\thmfontcolor}\everymath{\color{\thmfontcolor}}\everydisplay{\color{\thmfontcolor}}\renewcommand{\strongcolor}{\thmstrongcolor},
+    center title,
+    fonttitle = \addfontfeatures{Color=\thmtitlecolor}\bfseries,
+    toptitle = 0.3em,
+    bottomtitle = 0.3em,
+    top = 0.4em,
+    bottom = 0.4em,
+    arc=1em,
+    boxrule = 0.25em,
+    colframe = \thmtitlebackcolor,
+    titlerule = 0pt,
+    width = \linewidth,
+    title={#2},
+    ##1
+  }
+}
+
+\newcommand{\defstylebox}[2]{
+  \newtcolorbox[auto counter]{#1}[1][]{%
+    before skip=1em,
+    after skip=1em,
+    colback = \defbackcolor,
+    colbacktitle = \deftitlebackcolor,
+    fontupper = \addfontfeatures{Color=\deffontcolor}\everymath{\color{\deffontcolor}}\everydisplay{\color{\deffontcolor}}\renewcommand{\strongcolor}{\defstrongcolor},
+    center title,
+    fonttitle = \addfontfeatures{Color=\deftitlecolor}\bfseries,
+    toptitle = 0.3em,
+    bottomtitle = 0.3em,
+    top = 0.4em,
+    bottom = 0.4em,
+    arc=1em,
+    boxrule = 0.25em,
+    colframe = \deftitlebackcolor,
+    titlerule = 0pt,
+    width = \linewidth,
+    title={#2},
+    ##1
+  }
+}
+
+\thmstylebox{theorem}{Theorem}
+\thmstylebox{lemma}{Lemma}
+\thmstylebox{proposition}{Proposition}
+\thmstylebox{formula}{Formula}
+\defstylebox{definition}{Definition}
+\defstylebox{remark}{Remark}
+\defstylebox{example}{Example}
+\defstylebox{question}{Question}
+\defstylebox{problem}{Problem}
+
+\newtcolorbox[auto counter]{thmcustom}[2][]{%
+  before skip=1em,
+  after skip=1em,
+  colback = \thmbackcolor,
+  colbacktitle = \thmtitlebackcolor,
+  fontupper = \addfontfeatures{Color=\thmfontcolor}\everymath{\color{\thmfontcolor}}\everydisplay{\color{\thmfontcolor}}\renewcommand{\strongcolor}{\thmstrongcolor},
+  center title,
+  fonttitle = \addfontfeatures{Color=\thmtitlecolor}\bfseries,
+  toptitle = 0.3em,
+  bottomtitle = 0.3em,
+  top = 0.4em,
+  bottom = 0.4em,
+  arc=1em,
+  boxrule = 0.25em,
+  colframe = \thmtitlebackcolor,
+  titlerule = 0pt,
+  width = \linewidth,
+  title={#2},
+  #1
+}
+
+\newtcolorbox[auto counter]{defcustom}[2][]{%
+  before skip=1em,
+  after skip=1em,
+  colback = \defbackcolor,
+  colbacktitle = \deftitlebackcolor,
+  fontupper = \addfontfeatures{Color=\deffontcolor}\everymath{\color{\deffontcolor}}\everydisplay{\color{\deffontcolor}}\renewcommand{\strongcolor}{\defstrongcolor},
+  center title,
+  fonttitle = \addfontfeatures{Color=\deftitlecolor}\bfseries,
+  toptitle = 0.3em,
+  bottomtitle = 0.3em,
+  top = 0.4em,
+  bottom = 0.4em,
+  arc=1em,
+  boxrule = 0.25em,
+  colframe = \deftitlebackcolor,
+  titlerule = 0pt,
+  width = \linewidth,
+  title={#2},
+  #1
+}
+
+
+
+%%% Oregon color palette
+\definecolor{txtcolororegon}{HTML}{FFFFFF}
+\definecolor{backcolororegon}{HTML}{154733}
+\definecolor{secheadcolororegon}{HTML}{FEE123}
+\definecolor{titlecolororegon}{HTML}{FEE123}
+\definecolor{authorcolororegon}{HTML}{FEE123}
+\definecolor{strongcolororegon}{HTML}{FEE123}
+\definecolor{thmbackcolororegon}{HTML}{FEE123}
+\definecolor{thmtitlebackcolororegon}{HTML}{DBAA00}
+\definecolor{thmtitlecolororegon}{HTML}{154733}
+\definecolor{thmfontcolororegon}{HTML}{154733}
+\definecolor{thmstrongcolororegon}{HTML}{007935}
+\definecolor{defbackcolororegon}{HTML}{FEE123}
+\definecolor{deftitlebackcolororegon}{HTML}{DBAA00}
+\definecolor{deftitlecolororegon}{HTML}{154733}
+\definecolor{deffontcolororegon}{HTML}{154733}
+\definecolor{defstrongcolororegon}{HTML}{007935}
+\definecolor{itemizelabelcolororegon}{HTML}{FEE123}
+
+%%% Oregon alternate color palette
+\definecolor{txtcolororegonalt}{HTML}{154733}
+\definecolor{backcolororegonalt}{HTML}{FEE123}
+\definecolor{secheadcolororegonalt}{HTML}{154733}
+\definecolor{titlecolororegonalt}{HTML}{154733}
+\definecolor{authorcolororegonalt}{HTML}{154733}
+\definecolor{strongcolororegonalt}{HTML}{154733}
+\definecolor{thmbackcolororegonalt}{HTML}{154733}
+\definecolor{thmtitlebackcolororegonalt}{HTML}{007935}
+\definecolor{thmtitlecolororegonalt}{HTML}{FEE123}
+\definecolor{thmfontcolororegonalt}{HTML}{FFFFFF}
+\definecolor{thmstrongcolororegonalt}{HTML}{FEE123}
+\definecolor{defbackcolororegonalt}{HTML}{154733}
+\definecolor{deftitlebackcolororegonalt}{HTML}{007935}
+\definecolor{deftitlecolororegonalt}{HTML}{FEE123}
+\definecolor{deffontcolororegonalt}{HTML}{FFFFFF}
+\definecolor{defstrongcolororegonalt}{HTML}{FEE123}
+\definecolor{itemizelabelcolororegonNalt}{HTML}{154733}
+
+
+%%% SIUE color palette
+\definecolor{txtcolorsiue}{HTML}{010101}
+\definecolor{backcolorsiue}{HTML}{FFFFFF}
+\definecolor{secheadcolorsiue}{HTML}{CC0000}
+\definecolor{titlecolorsiue}{HTML}{CC0000}
+\definecolor{authorcolorsiue}{HTML}{CC0000}
+\definecolor{strongcolorsiue}{HTML}{CC0000}
+\definecolor{thmbackcolorsiue}{HTML}{CC0000}
+\definecolor{thmtitlebackcolorsiue}{HTML}{010101}
+\definecolor{thmtitlecolorsiue}{HTML}{FFFFFF}
+\definecolor{thmfontcolorsiue}{HTML}{FFFFFF}
+\definecolor{thmstrongcolorsiue}{HTML}{010101}
+\definecolor{defbackcolorsiue}{HTML}{010101}
+\definecolor{deftitlebackcolorsiue}{HTML}{CC0000}
+\definecolor{deftitlecolorsiue}{HTML}{FFFFFF}
+\definecolor{deffontcolorsiue}{HTML}{FFFFFF}
+\definecolor{defstrongcolorsiue}{HTML}{CC0000}
+\definecolor{itemizelabelcolorsiue}{HTML}{CC0000}
+
+%%% SIUE alternate color palette
+\definecolor{txtcolorsiuealt}{HTML}{FFFFFF}
+\definecolor{backcolorsiuealt}{HTML}{CC0000}
+\definecolor{secheadcolorsiuealt}{HTML}{FFFFFF}
+\definecolor{titlecolorsiuealt}{HTML}{CC0000}
+\definecolor{authorcolorsiuealt}{HTML}{CC0000}
+\definecolor{strongcolorsiuealt}{HTML}{FFFFFF}
+\definecolor{thmbackcolorsiuealt}{HTML}{FFFFFF}
+\definecolor{thmtitlebackcolorsiuealt}{HTML}{010101}
+\definecolor{thmtitlecolorsiuealt}{HTML}{FFFFFF}
+\definecolor{thmfontcolorsiuealt}{HTML}{010101}
+\definecolor{thmstrongcolorsiuealt}{HTML}{CC0000}
+\definecolor{defbackcolorsiuealt}{HTML}{FFFFFF}
+\definecolor{deftitlebackcolorsiuealt}{HTML}{010101}
+\definecolor{deftitlecolorsiuealt}{HTML}{FFFFFF}
+\definecolor{deffontcolorsiuealt}{HTML}{010101}
+\definecolor{defstrongcolorsiuealt}{HTML}{CC0000}
+\definecolor{itemizelabelcolorsiuealt}{HTML}{FFFFFF}
+
+%%% SIUE subdued color palette
+\definecolor{txtcolorsiuesubdued}{HTML}{010101}
+\definecolor{backcolorsiuesubdued}{HTML}{FFFFFF}
+\definecolor{secheadcolorsiuesubdued}{HTML}{CC0000}
+\definecolor{titlecolorsiuesubdued}{HTML}{CC0000}
+\definecolor{authorcolorsiuesubdued}{HTML}{CC0000}
+\definecolor{strongcolorsiuesubdued}{HTML}{CC0000}
+\definecolor{thmbackcolorsiuesubdued}{HTML}{FFFFFF}
+\definecolor{thmtitlebackcolorsiuesubdued}{HTML}{CC0000}
+\definecolor{thmtitlecolorsiuesubdued}{HTML}{FFFFFF}
+\definecolor{thmfontcolorsiuesubdued}{HTML}{010101}
+\definecolor{thmstrongcolorsiuesubdued}{HTML}{CC0000}
+\definecolor{defbackcolorsiuesubdued}{HTML}{FFFFFF}
+\definecolor{deftitlebackcolorsiuesubdued}{HTML}{010101}
+\definecolor{deftitlecolorsiuesubdued}{HTML}{FFFFFF}
+\definecolor{deffontcolorsiuesubdued}{HTML}{010101}
+\definecolor{defstrongcolorsiuesubdued}{HTML}{CC0000}
+\definecolor{itemizelabelcolorsiuesubdued}{HTML}{CC0000}
+
+%%% Color macros
+\newcommand{\txtcolor}{}
+\newcommand{\backcolor}{}
+\newcommand{\secheadcolor}{}
+\newcommand{\titlecolor}{}
+\newcommand{\authorcolor}{}
+\newcommand{\strongcolor}{}
+\newcommand{\thmbackcolor}{}
+\newcommand{\thmtitlebackcolor}{}
+\newcommand{\thmtitlecolor}{}
+\newcommand{\thmfontcolor}{}
+\newcommand{\thmstrongcolor}{}
+\newcommand{\defbackcolor}{}
+\newcommand{\deftitlebackcolor}{}
+\newcommand{\deftitlecolor}{}
+\newcommand{\deffontcolor}{}
+\newcommand{\defstrongcolor}{}
+\newcommand{\itemizelabelcolor}{}
+
+%%% User command to redefine all color macros
+\newcommand{\colorpalette}[1]{
+  \renewcommand{\txtcolor}{txtcolor#1}
+  \renewcommand{\backcolor}{backcolor#1}
+  \renewcommand{\secheadcolor}{secheadcolor#1}
+  \renewcommand{\titlecolor}{titlecolor#1}
+  \renewcommand{\authorcolor}{authorcolor#1}
+  \renewcommand{\strongcolor}{strongcolor#1}
+  \renewcommand{\thmbackcolor}{thmbackcolor#1}
+  \renewcommand{\thmtitlebackcolor}{thmtitlebackcolor#1}
+  \renewcommand{\thmtitlecolor}{thmtitlecolor#1}
+  \renewcommand{\thmfontcolor}{thmfontcolor#1}
+  \renewcommand{\thmstrongcolor}{thmstrongcolor#1}
+  \renewcommand{\defbackcolor}{defbackcolor#1}
+  \renewcommand{\deftitlebackcolor}{deftitlebackcolor#1}
+  \renewcommand{\deftitlecolor}{deftitlecolor#1}
+  \renewcommand{\deffontcolor}{deffontcolor#1}
+  \renewcommand{\defstrongcolor}{defstrongcolor#1}
+  \renewcommand{\itemizelabelcolor}{itemizelabelcolor#1}
+  \pagecolor{\backcolor}
+  \addfontfeatures{Color=\txtcolor}
+  \everymath{\color{\txtcolor}}
+  \everydisplay{\color{\txtcolor}}
+}
+
+%%% Redefine section heading
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus.2ex}%
+  {\huge\bfseries\centering\addfontfeatures{Color=\secheadcolor}}}
+
+
+%%% Redefine maketitle
+\renewcommand*{\maketitle}{
+  \begin{titlepage}
+    {\Huge\bfseries\addfontfeatures{Color=\titlecolor}\@title}\par
+    \vfill
+    {\Huge\addfontfeatures{Color=\authorcolor}\@author\par}
+    \vfill
+  \end{titlepage}
+}
+  % \begin{titlepage}
+  %   \parbox{48cm}{\Huge\bfseries\addfontfeatures{Color=\titlecolor}\@title}\par
+  %   \vfill
+  %   {\Huge\addfontfeatures{Color=\authorcolor}\@author\par}
+  %   \vfill
+  % \end{titlepage}
+
+%%% Strengthened text
+\newcommand{\strengthen}[1]{{\bfseries\addfontfeatures{Color=\strongcolor}#1}}
+
+%%% Itemize list behavior
+\setlist[itemize]{label={\addfontfeatures{Color=\itemizelabelcolor}$\blacksquare$},itemindent=1ex}
+
+
