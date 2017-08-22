@@ -1,0 +1,124 @@
+% Created by FlowframTk version 0.8.4
+% Aug 15, 2017 2:50:02 PM
+% /home/jireh/projects/sandbox/posters/harper-subdued.jdr
+% The normal size font is assumed to be 24pt
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{harper-subdued}
+\RequirePackage{pgf}
+\RequirePackage{ifpdf}
+\newcommand*{\jdroutline}[3]{%
+  \GenericWarning{}{text outline can't be implemented}#3%
+}%
+\ifpdf
+ \let\jdrorgmod\mod
+ \InputIfFileExists{pdf-trans}%
+ {%
+   \renewcommand*{\jdroutline}[3]{%
+     {\def\mod{\expandtwonumexprafter \modulo}%
+     \setbox\@tempboxa\hbox{##3}%
+     \boxgs{##1}{}\copy\@tempboxa
+     }%
+   }%
+ }{}
+ \let\mod\jdrorgmod
+\else
+ \IfFileExists{pst-char.sty}%
+ {%
+   \usepackage{pst-char}
+   \renewcommand*{\jdroutline}[3]{%
+     \begin{pspicture}(0,0)
+     \pscharpath[##2]{##3}
+     \end{pspicture}
+   }
+ }{}
+\fi
+
+\DeclareOption{draft}{\PassOptionsToPackage{draft}{flowfram}}
+\DeclareOption{final}{\PassOptionsToPackage{final}{flowfram}}
+\DeclareOption{rotate}{\PassOptionsToPackage{rotate}{flowfram}}
+\DeclareOption{norotate}{\PassOptionsToPackage{norotate}{flowfram}}
+\DeclareOption{ttbtitle}{\PassOptionsToPackage{ttbtitle}{flowfram}}
+\DeclareOption{ttbnotitle}{\PassOptionsToPackage{ttbnotitle}{flowfram}}
+\DeclareOption{ttbnum}{\PassOptionsToPackage{ttbnum}{flowfram}}
+\DeclareOption{ttbnonum}{\PassOptionsToPackage{ttbnonum}{flowfram}}
+\DeclareOption{color}{\PassOptionsToPackage{color}{flowfram}}
+\DeclareOption{nocolor}{\PassOptionsToPackage{nocolor}{flowfram}}
+\ProcessOptions
+\RequirePackage[paperwidth=1728.0bp,paperheight=1296.0bp]{geometry}
+\geometry{lmargin=0.0bp,rmargin=0.0bp,tmargin=0.0bp,bmargin=0.0bp}
+\setlength{\evensidemargin}{\oddsidemargin}
+\addtolength{\evensidemargin}{53.798257bp}
+\RequirePackage{flowfram}
+
+\renewcommand*{\@ff@pages@countreg}{\c@page}
+\newstaticframe[all]{820.799988bp}{172.800003bp}{43.200001bp}{1079.999996bp}[title]
+
+\setstaticframe*{title}{valign=c}
+\newflowframe[all]{504.0bp}{979.200073bp}{43.200001bp}{43.199921bp}[flow1]
+
+\newflowframe[all]{504.000061bp}{979.200073bp}{604.799988bp}{43.199921bp}[flow2]
+
+\newstaticframe[all]{476.200073bp}{1210.600098bp}{1209.099976bp}{42.699902bp}[graphictext]
+
+\setstaticframe*{graphictext}{valign=c}
+\newstaticframe[all]{173.800049bp}{58.600002bp}{921.099976bp}{1194.699997bp}[logo]
+
+\setstaticframe*{logo}{valign=c}
+\newstaticframe[all]{562.599976bp}{1297.0bp}{1165.900024bp}{-0.5bp}[Graphics]
+
+% Border command for frame 'Graphics'
+\expandafter\def\csname @flf@border@Graphics\endcsname#1{%
+\begin{pgfpicture}{0pt}{0pt}{562.599976bp}{1297.0bp}
+\pgfputat{\pgfpoint{-0.0bp}{-0.0bp}}{%
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetrectcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{0.499976bp}{1296.5bp}}
+\pgfpathlineto{\pgfpoint{0.499976bp}{0.5bp}}
+\pgfpathlineto{\pgfpoint{562.099976bp}{0.5bp}}
+\pgfpathlineto{\pgfpoint{562.099976bp}{1296.5bp}}
+\pgfpathlineto{\pgfpoint{0.499976bp}{1296.5bp}}
+\pgfclosepath
+\definecolor{strokepaint}{rgb}{0.0,0.0,0.0}\pgfsetstrokecolor{strokepaint}
+\pgfusepath{stroke}
+\end{pgfscope}
+}
+\pgfputat{\pgfpoint{0pt}{0pt}}{\pgftext[left,bottom]{#1}}
+\end{pgfpicture}}
+\setstaticframe*
+{Graphics}{offset=0pt,border={@flf@border@Graphics}}
+
+\setstaticframe*{Graphics}{valign=c}
+\newstaticframe[all]{15.400024bp}{1297.0bp}{1151.5bp}{-0.5bp}[Divider]
+
+% Border command for frame 'Divider'
+\expandafter\def\csname @flf@border@Divider\endcsname#1{%
+\begin{pgfpicture}{0pt}{0pt}{15.400024bp}{1297.0bp}
+\pgfputat{\pgfpoint{-0.0bp}{-0.0bp}}{%
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetrectcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{0.5bp}{1296.5bp}}
+\pgfpathlineto{\pgfpoint{0.5bp}{0.5bp}}
+\pgfpathlineto{\pgfpoint{14.9bp}{0.5bp}}
+\pgfpathlineto{\pgfpoint{14.9bp}{1296.5bp}}
+\pgfpathlineto{\pgfpoint{0.5bp}{1296.5bp}}
+\pgfclosepath
+\definecolor{fillpaint}{rgb}{0.0,0.0,0.0}\pgfsetfillcolor{fillpaint}
+\pgfseteorule 
+\definecolor{strokepaint}{rgb}{0.0,0.0,0.0}\pgfsetstrokecolor{strokepaint}
+\pgfusepath{fill,stroke}
+\end{pgfscope}
+}
+\pgfputat{\pgfpoint{0pt}{0pt}}{\pgftext[left,bottom]{#1}}
+\end{pgfpicture}}
+\setstaticframe*
+{Divider}{offset=0pt,border={@flf@border@Divider}}
+
+\setstaticframe*{Divider}{valign=c}
+
+\endinput

@@ -1,0 +1,96 @@
+% Created by FlowframTk version 0.8.4
+% May 4, 2017 1:16:32 PM
+% The normal size font is assumed to be 24pt
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{harper-lobster}
+\RequirePackage{pgf}
+\RequirePackage{ifpdf}
+\newcommand*{\jdroutline}[3]{%
+  \GenericWarning{}{text outline can't be implemented}#3%
+}%
+\ifpdf
+ \let\jdrorgmod\mod
+ \InputIfFileExists{pdf-trans}%
+ {%
+   \renewcommand*{\jdroutline}[3]{%
+     {\def\mod{\expandtwonumexprafter \modulo}%
+     \setbox\@tempboxa\hbox{##3}%
+     \boxgs{##1}{}\copy\@tempboxa
+     }%
+   }%
+ }{}
+ \let\mod\jdrorgmod
+\else
+ \IfFileExists{pst-char.sty}%
+ {%
+   \usepackage{pst-char}
+   \renewcommand*{\jdroutline}[3]{%
+     \begin{pspicture}(0,0)
+     \pscharpath[##2]{##3}
+     \end{pspicture}
+   }
+ }{}
+\fi
+
+\DeclareOption{draft}{\PassOptionsToPackage{draft}{flowfram}}
+\DeclareOption{final}{\PassOptionsToPackage{final}{flowfram}}
+\DeclareOption{rotate}{\PassOptionsToPackage{rotate}{flowfram}}
+\DeclareOption{norotate}{\PassOptionsToPackage{norotate}{flowfram}}
+\DeclareOption{ttbtitle}{\PassOptionsToPackage{ttbtitle}{flowfram}}
+\DeclareOption{ttbnotitle}{\PassOptionsToPackage{ttbnotitle}{flowfram}}
+\DeclareOption{ttbnum}{\PassOptionsToPackage{ttbnum}{flowfram}}
+\DeclareOption{ttbnonum}{\PassOptionsToPackage{ttbnonum}{flowfram}}
+\DeclareOption{color}{\PassOptionsToPackage{color}{flowfram}}
+\DeclareOption{nocolor}{\PassOptionsToPackage{nocolor}{flowfram}}
+\ProcessOptions
+\RequirePackage[a0paper,landscape]{geometry}
+\geometry{lmargin=0.0bp,rmargin=0.0bp,tmargin=0.0bp,bmargin=0.0bp}
+\setlength{\evensidemargin}{\oddsidemargin}
+\addtolength{\evensidemargin}{53.798257bp}
+\RequirePackage{flowfram}
+
+\renewcommand*{\@ff@pages@countreg}{\c@page}
+\newstaticframe[all]{1275.590576bp}{368.503937bp}{85.039368bp}{1930.393703bp}[title]
+
+\setstaticframe*{title}{valign=c}
+\newflowframe[all]{1020.472473bp}{1757.480225bp}{85.039368bp}{87.874081bp}[flow1]
+
+\newflowframe[all]{1020.472534bp}{1757.480225bp}{1190.551147bp}{87.874081bp}[flow2]
+
+\newstaticframe[all]{1078.165283bp}{2382.102295bp}{2295.562988bp}{2.334713bp}[graphics]
+
+% Border command for frame 'graphics'
+\expandafter\def\csname @flf@border@graphics\endcsname#1{%
+\begin{pgfpicture}{0pt}{0pt}{1078.165283bp}{2382.102295bp}
+\pgfputat{\pgfpoint{-0.0bp}{-0.0bp}}{%
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetrectcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{0.500004bp}{2381.602295bp}}
+\pgfpathlineto{\pgfpoint{0.500004bp}{0.499933bp}}
+\pgfpathlineto{\pgfpoint{1077.665358bp}{0.499933bp}}
+\pgfpathlineto{\pgfpoint{1077.665358bp}{2381.602295bp}}
+\pgfpathlineto{\pgfpoint{0.500004bp}{2381.602295bp}}
+\pgfclosepath
+\definecolor{fillpaint}{rgb}{0.8,0.0,0.0}\pgfsetfillcolor{\backcolor}
+\pgfseteorule 
+\definecolor{strokepaint}{rgb}{0.0,0.0,0.0}\pgfsetstrokecolor{strokepaint}
+\pgfusepath{fill,stroke}
+\end{pgfscope}
+}
+\pgfputat{\pgfpoint{0pt}{0pt}}{\pgftext[left,bottom]{#1}}
+\end{pgfpicture}}
+\setstaticframe*
+{graphics}{offset=0pt,border={@flf@border@graphics}}
+
+\setstaticframe*{graphics}{valign=t}
+\newstaticframe[all]{908.08667bp}{2212.023682bp}{2380.602295bp}{87.37402bp}[graphictext]
+
+\setstaticframe*{graphictext}{valign=c}
+\newstaticframe[all]{301.472534bp}{86.039368bp}{1910.051147bp}{2213.358273bp}[logo]
+
+\setstaticframe*{logo}{valign=c}
+
+\endinput

@@ -1,0 +1,69 @@
+% Created by FlowframTk version 0.8.4
+% Aug 16, 2017 11:57:24 AM
+% /home/jireh/projects/sandbox/posters/four-col-centered.jdr
+% The normal size font is assumed to be 24pt
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{four-col-centered}
+\RequirePackage{pgf}
+\RequirePackage{ifpdf}
+\newcommand*{\jdroutline}[3]{%
+  \GenericWarning{}{text outline can't be implemented}#3%
+}%
+\ifpdf
+ \let\jdrorgmod\mod
+ \InputIfFileExists{pdf-trans}%
+ {%
+   \renewcommand*{\jdroutline}[3]{%
+     {\def\mod{\expandtwonumexprafter \modulo}%
+     \setbox\@tempboxa\hbox{##3}%
+     \boxgs{##1}{}\copy\@tempboxa
+     }%
+   }%
+ }{}
+ \let\mod\jdrorgmod
+\else
+ \IfFileExists{pst-char.sty}%
+ {%
+   \usepackage{pst-char}
+   \renewcommand*{\jdroutline}[3]{%
+     \begin{pspicture}(0,0)
+     \pscharpath[##2]{##3}
+     \end{pspicture}
+   }
+ }{}
+\fi
+
+\DeclareOption{draft}{\PassOptionsToPackage{draft}{flowfram}}
+\DeclareOption{final}{\PassOptionsToPackage{final}{flowfram}}
+\DeclareOption{rotate}{\PassOptionsToPackage{rotate}{flowfram}}
+\DeclareOption{norotate}{\PassOptionsToPackage{norotate}{flowfram}}
+\DeclareOption{ttbtitle}{\PassOptionsToPackage{ttbtitle}{flowfram}}
+\DeclareOption{ttbnotitle}{\PassOptionsToPackage{ttbnotitle}{flowfram}}
+\DeclareOption{ttbnum}{\PassOptionsToPackage{ttbnum}{flowfram}}
+\DeclareOption{ttbnonum}{\PassOptionsToPackage{ttbnonum}{flowfram}}
+\DeclareOption{color}{\PassOptionsToPackage{color}{flowfram}}
+\DeclareOption{nocolor}{\PassOptionsToPackage{nocolor}{flowfram}}
+\ProcessOptions
+\RequirePackage[paperwidth=1728.0bp,paperheight=1296.0bp]{geometry}
+\geometry{lmargin=0.0bp,rmargin=0.0bp,tmargin=0.0bp,bmargin=0.0bp}
+\setlength{\evensidemargin}{\oddsidemargin}
+\addtolength{\evensidemargin}{53.798257bp}
+\RequirePackage{flowfram}
+
+\renewcommand*{\@ff@pages@countreg}{\c@page}
+\newstaticframe[all]{806.399963bp}{172.800003bp}{460.799988bp}{1079.999996bp}[title]
+
+\setstaticframe*{title}{valign=c}
+\newflowframe[all]{360.0bp}{1209.600098bp}{43.200001bp}{43.199902bp}[flow1]
+
+\newflowframe[all]{374.400024bp}{979.200073bp}{460.799988bp}{43.199921bp}[flow2]
+
+\newstaticframe[all]{173.800049bp}{58.600002bp}{1497.099976bp}{1194.699997bp}[logo]
+
+\setstaticframe*{logo}{valign=c}
+\newflowframe[all]{374.399963bp}{979.200073bp}{892.799988bp}{43.199921bp}[flow3]
+
+\newflowframe[all]{360.0bp}{1094.400024bp}{1324.800049bp}{43.199982bp}[flow4]
+
+
+\endinput
