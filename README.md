@@ -16,7 +16,7 @@ There are a few important pieces of information to note.
 
 * __fonts:__ you will have to change the fonts chosen in the example document (i.e., `Linux Libertine` and `DejaVu Sans`) to some installed on your system (e.g., `Times New Roman` and `Arial`).
 * __TeX engine:__ currently, the system requires that you compile your document with `LuaTeX` as opposed to the more common `pdfTeX` or similar. However, `LuaTeX` comes bundled with all major TeX distributions including MikTeX (Windows), MacTeX (Apple) and TeX Live (Linux); it should not be particularly hard to use.
-* __SIUE logo:__ for copyright reasons, a copy of the SIUE logo cannot be included with the distribution of this software. However, you can obtain a copy of it in `.eps` format from the [University Marketing and Communications][https://www.siue.edu/marketing-and-communications/services/graphic-design/wordmarks-for-download.shtml] website. You can also contact Dr. Loreaux for a copy of the logo in `.pdf` format.
+* __SIUE logo:__ for copyright reasons, a copy of the SIUE logo cannot be included with the distribution of this software. However, you can obtain a copy of it in `.eps` format from the [University Marketing and Communications](https://www.siue.edu/marketing-and-communications/services/graphic-design/wordmarks-for-download.shtml) website. You can also contact Dr. Loreaux for a copy of the logo in `.pdf` format.
 
 After attending to these three items, you should be able to compile `example-poster.tex` successfully.
 
@@ -102,7 +102,7 @@ So, for example,
 \end{thmcustom}
 ```
 
-produces a definition-like environment with the title *Loreaux's Theorem*.
+produces a theorem-like environment with the title *Loreaux's Theorem*.
 
 # Formatting tips
 
